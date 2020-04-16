@@ -29,7 +29,7 @@ def hello do
       |> Map.put(:hello, :world)
     end
 
-  {%{hello: world}, []} = Code.eval_quoted(x)
+  {%{hello: world}, _} = Code.eval_quoted(x)
   world
 end
 ```
@@ -44,7 +44,7 @@ lib/dialyzer_bug.ex:22:pattern_match
 The pattern can never match the type.
 
 Pattern:
-{%{:hello => _world}, []}
+{%{:hello => _world}, _}
 
 Type:
 {atom() | [any()] | number() | {_, _, _, _}, [{atom() | tuple(), _}]}

@@ -19,7 +19,7 @@ defmodule DialyzerBug do
         |> Map.put(:hello, :world)
       end
 
-    {%{hello: world}, []} = Code.eval_quoted(x)
+    {%{hello: world}, _} = Code.eval_quoted(x)
     world
   end
 end

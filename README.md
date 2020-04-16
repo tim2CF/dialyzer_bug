@@ -53,3 +53,10 @@ ________________________________________________________________________________
 done (warnings were emitted)
 Halting VM with exit status 2
 ```
+
+spec of `eval_quoted` is pretty straightforward and don't contain this type
+
+```elixir
+@type binding :: [{atom() | tuple(), any}]
+@spec eval_quoted(Macro.t(), binding, Macro.Env.t() | keyword) :: {term, binding}
+```

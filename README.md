@@ -1,8 +1,17 @@
 # DialyzerBug
 
+Software versions
+
+```
+MacOS 10.15.4
+Erlang/OTP 22 [erts-10.6.4]
+Elixir (1.10.1)
+Dialyxir 1.0.0
+```
+
 To reproduce bug on your machine
 
-```elixir
+```shell
 git clone git@github.com:tim2CF/dialyzer_bug.git
 cd ./dialyzer_bug
 mix deps.get

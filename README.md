@@ -10,7 +10,22 @@ mix test
 mix dialyzer
 ```
 
-and you will see output (error is not expected and type which Dialyzer suggests is weird)
+and you will see output which is caused by this simple function (which works fine in tests)
+
+```elixir
+def hello do
+  x =
+    quote do
+      Map.new()
+      |> Map.put(:hello, :world)
+    end
+
+  {%{hello: world}, []} = Code.eval_quoted(x)
+  world
+end
+```
+
+error is not expected and type which Dialyzer suggests is weird
 
 ```
 lib/dialyzer_bug.ex:15:no_return
